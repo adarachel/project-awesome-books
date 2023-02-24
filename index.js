@@ -98,16 +98,10 @@ const timeDisplay = document.getElementById('today-date');
 // create a function to update the time every second
 const updateTime = () => {
   const currentTime = DateTime.now();
-  // const hours = currentTime.getHours();
-  // const minutes = currentTime.getMinutes();
-  // const seconds = currentTime.getSeconds();
   timeDisplay.textContent = `${currentTime.toLocaleString(
     DateTime.DATE_FULL,
   )}, ${currentTime.toLocaleString(DateTime.TIME_WITH_SECONDS)}`;
 };
-
-// call the function once to initialize the time
-// updateTime();
 
 // update the time every second
 setInterval(updateTime, 1000);

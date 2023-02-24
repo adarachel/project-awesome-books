@@ -5,23 +5,23 @@ export default class BookCollection {
     this.#books = JSON.parse(localStorage.getItem('bookCollection')) || [];
   }
 
-  addBook(book) {
+  addBook = (book) => {
     if (this.#books.some((item) => item.title === book.title)) return;
 
     this.#books.push(book);
     this.#saveToLocalStorage();
   }
 
-  getbooks() {
+  getbooks = () => {
     return this.#books;
   }
 
-  removeBook(title) {
+  removeBook = (title) => {
     this.#books = this.#books.filter((b) => b.title !== title);
     this.#saveToLocalStorage();
   }
 
-#saveToLocalStorage() {
+  #saveToLocalStorage = () => {
     localStorage.setItem('bookCollection', JSON.stringify(this.#books));
   }
 }
