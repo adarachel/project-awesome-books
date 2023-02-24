@@ -12,9 +12,7 @@ export default class BookCollection {
     this.#saveToLocalStorage();
   }
 
-  getbooks = () => {
-    return this.#books;
-  }
+  getbooks = () => this.#books;
 
   removeBook = (title) => {
     this.#books = this.#books.filter((b) => b.title !== title);
